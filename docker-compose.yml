@@ -1,10 +1,10 @@
 version: "2.1"
 services:
-  db:
-    image: registry.opensuse.org/obs/server/unstable/container/leap151/containers/openbuildservice/mariadb
-    ports:
-      - "3306:3306"
-    command: /usr/lib/mysql/mysql-systemd-helper start
+  # db:
+  #   image: registry.opensuse.org/obs/server/unstable/container/leap151/containers/openbuildservice/mariadb
+  #   ports:
+  #     - "3306:3306"
+  #   command: /usr/lib/mysql/mysql-systemd-helper start
   cache:
     image: registry.opensuse.org/obs/server/unstable/container/leap151/containers/openbuildservice/memcached
     ports:
@@ -40,7 +40,7 @@ services:
       - "3000:3000"
       - "1080:1080"
     depends_on:
-      - db
+      # - db
       - cache
       - backend
       - worker
